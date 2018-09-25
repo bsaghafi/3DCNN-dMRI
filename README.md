@@ -3,6 +3,7 @@ Keras Implementation of a 3DCNN that predicts level of head impact exposure from
 This repository includes training, validation, permutation testing and occlusion map for discovering feature importance.
 
 Please cite the following paper if you use the code:
+* [Quantifying the Association between White Matter Integrity Changes and Subconcussive Head Impact Exposure ](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10575/105750E/Quantifying-the-association-between-white-matter-integrity-changes-and-subconcussive/10.1117/12.2293023.short)
 
 B. Saghafi, G. Murugesan, E. Davenport, B. Wagner, J. Urban, M. Kelley, D. Jones, A. Powers, C. Whitlow, J. Stitzel, J. Maldjian, A. Montillo, Quantifying the Association between White Matter Integrity Changes and Subconcussive Head Impact Exposure from a Single Season of Youth and High School Football using 3D Convolutional Neural Networks, SPIE Medical Imaging, Feb. 2018. 
 
