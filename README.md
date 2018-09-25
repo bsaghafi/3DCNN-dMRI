@@ -1,21 +1,15 @@
 # 3DCNN-dMRI
-Keras Implementation of a 3DCNN that predicts level of head impact exposure from changes in diffusion MRI.
+Keras Implementation of a 3DCNN that predicts level of head impact exposure from changes in FA images post-pre.
 This repository includes training, validation, permutation testing and occlusion map for discovering feature importance.
 
 Please cite the following paper if you use the code:
 * [Quantifying the Association between White Matter Integrity Changes and Subconcussive Head Impact Exposure ](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10575/105750E/Quantifying-the-association-between-white-matter-integrity-changes-and-subconcussive/10.1117/12.2293023.short)
 
-B. Saghafi, G. Murugesan, E. Davenport, B. Wagner, J. Urban, M. Kelley, D. Jones, A. Powers, C. Whitlow, J. Stitzel, J. Maldjian, A. Montillo, Quantifying the Association between White Matter Integrity Changes and Subconcussive Head Impact Exposure from a Single Season of Youth and High School Football using 3D Convolutional Neural Networks, SPIE Medical Imaging, Feb. 2018. 
-
-
-File Descriptions:
-
+## Training and Testing
+For training and testing the model, run:
+```
 3DCNN_diffusion_train_test.py
-Purpose: Trains and tests a 3DCNN model to predict the level of head impact exposure from changes in FA images post-pre. The model is trained on 48 subjects and tested on 12 subjects. The train and test subjects were chosen by stratified random selection. 
-Inputs:
-delta_FA_CD_new_24_36.npy: The delta FA maps in the form of Numpy array for 24 high impact and 36 low impact exposure subjects . The FA images were previously cropped and downsampled to the size of 48x60x52. 
-rwe_cp_new_24_36.npy: The classification labels for the above delta FA maps. 1 shows high impact exposure class and 0 represents low impact. 
-Outputs: classification performance measures on the train and test data.
+```
 Total run time: ~42 minutes on Tesla K80.
 
 
