@@ -22,11 +22,13 @@ For performing model selection using 5-fold cross validation, run:
 ```
 In each validation test, the learning rate was reduced by 50% if the ROC AUC did not improve for 10 epochs. An early stopping schedule with look ahead was developed. Training stoped when the network showed no improvement in AUC score for 50 epochs. 
 
+## Permutation Testing
 For performing permutation testing and evaluating the statistical significance of the overall model, run:
 ```
 permutation_testing.py
 ```
 
+## Occlusion Maps
 For computing occlusion maps for the high impact exposure sample, run:
 ```
 occlusion_map.py
