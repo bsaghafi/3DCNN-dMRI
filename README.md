@@ -10,30 +10,24 @@ For training and testing the model, run:
 ```
 3DCNN_diffusion_train_test.py
 ```
-Total run time: ~42 minutes on Tesla K80.
 
+For testing the pretrained model, run: 
+```
+3DCNN_diffusion_test_pretrained.py
+```
 
-3DCNN_diffusion_test_pretrained.py 
-Purpose: Tests a pretrained 3DCNN model to predict the level of head impact exposure from changes in FA images post-pre. The model (previously trained on 48 subjects) is tested on 12 subjects. 
-Total run time: ~14 seconds on Tesla K80.
+For performing model selection using 5-fold cross validation, run:
+```
+3DCNN_diffusion_ModelSelection_validation.py
+```
+In each validation test, the learning rate was reduced by 50% if the ROC AUC did not improve for 10 epochs. An early stopping schedule with look ahead was developed. Training stoped when the network showed no improvement in AUC score for 50 epochs. 
 
+For performing permutation testing and evaluating the statistical significance of the overall model, run:
+```
+permutation_testing.py
+```
 
-3DCNN_diffusion_ModelSelection_validation.py 
-Purpose: Validate a 3DCNN model for model selection using 5-fold cross validation. In each fold, It trains on 38 subjects and validates on 10. An adaptive learning rate was used. In each validation test, the learning rate was reduced by 50% if the ROC AUC did not improve for 10 epochs. An early stopping schedule with look ahead was developed. Training stops when the network shows no improvement in AUC score for 50 epochs. 
-Outputs: Average classification performance measures (AUC and F1-score) on the validation data as well as average best epochs over the 5 folds. 
-Total run time:  ~24 minutes on Tesla K80. 
-
-
-permutation_testing.py 
-Purpose: performs permutation testing to evaluate the statistical significance of the overall model 
-Inputs: delta FA maps (Post-Pre) and their classification labels, the 3DCNN model, the accuracy of the model on the test data 
-Parameters: Number of permutation tests (n_permutations=100) 
-Outputs: permutation scores, p-value, Probability density function (histogram) 
-Total run time: ~3 days for 100 permutation tests on Tesla K80
- 
-
-occlusion_map.py 
-Purpose: computes occlusion maps for the high impact exposure sample 
-Inputs: delta FA maps (Post-Pre) and their classification labels, the 3DCNN model, the subject to compute the occlusion map for 
-Outputs: occlusion map which can be overlaid on the FA map 
-Total run time: ~3 minutes on Tesla K80.
+For computing occlusion maps for the high impact exposure sample, run:
+```
+occlusion_map.py
+```
