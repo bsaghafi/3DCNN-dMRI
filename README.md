@@ -1,6 +1,6 @@
 # 3DCNN-dMRI
-Keras Implementation of a 3DCNN that predicts level of head impact exposure from changes in diffusion MRI
-The repository includes Training, validation, permutation testing and occlusion map for discovering feature importance.
+Keras Implementation of a 3DCNN that predicts level of head impact exposure from changes in diffusion MRI.
+This repository includes training, validation, permutation testing and occlusion map for discovering feature importance.
 
 Please cite the following paper if you use the code:
 
